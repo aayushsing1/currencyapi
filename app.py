@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import requests
 from bs4 import BeautifulSoup
-import awsgi
+#import awsgi
 
 
 app = Flask(__name__)
@@ -27,8 +27,8 @@ def convert_currency():
         return jsonify({'error': 'Failed to fetch data.'}), 500
 
 
-def lambda_handler(event, context):
-    return awsgi.response(app, event, context, base64_content_types={"image/png"})
+#def lambda_handler(event, context):
+    #return awsgi.response(app, event, context, base64_content_types={"image/png"})
 
 if __name__ == '__main__':
     app.run()
